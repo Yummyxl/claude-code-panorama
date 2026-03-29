@@ -31,9 +31,9 @@
 这一章不要单独读。  
 最好的方式是和两章交叉看：
 
-- [s03_system_prompt.md](/Users/unicorn/aiprojects/claude/agents/s03_system_prompt.md)
+- [s03_system_prompt.md](./s03_system_prompt.md)
   先理解“为什么 prompt 是状态装配”
-- [s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
+- [s13_prompt_catalog.md](./s13_prompt_catalog.md)
   再理解“每一段是怎么装进去的”
 
 到这里再回来读本章，你看到的“完整渲染 prompt”就不再是大段原文，而会是装配机制在具体场景里的落地结果。
@@ -68,7 +68,7 @@ if (CLAUDE_CODE_SIMPLE) return [
 ]
 ```
 
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)
+锚点：`cli.js:1495`
 
 ### 完整渲染结果
 
@@ -371,7 +371,7 @@ For longer work: ack → work → result. Between those, send a checkpoint when 
 Keep messages tight — the decision, the file:line, the PR number. Second person always ("your config"), never third.
 ```
 
-锚点：[`cli.js:297`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L297)
+锚点：`cli.js:297`
 
 ### 这份 prompt 的学习价值
 

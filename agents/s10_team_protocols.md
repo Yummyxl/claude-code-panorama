@@ -70,7 +70,7 @@ Claude Code 这套 team 设计最值得学的地方，不是它有 mailbox，
 Just writing a response in text is not visible to others on your team - you MUST use the SendMessage tool.
 ```
 
-锚点：[`cli.js:2790`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2790)
+锚点：`cli.js:2790`
 
 这几乎就是整套 protocol 的总纲。
 
@@ -135,8 +135,8 @@ I think the auth flow is broken around token refresh.
 
 锚点：
 
-- [`cli.js:2790`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2790)
-- [`cli.js:7979`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L7979)
+- `cli.js:2790`
+- `cli.js:7979`
 
 这已经说明团队协作不是自然语言习惯，而是正式协议面。
 
@@ -242,7 +242,7 @@ I think the auth flow is broken around token refresh.
 - `FF1(...)`
   打包 `shutdown_rejected`
 
-锚点：[`cli.js:2797`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2797)
+锚点：`cli.js:2797`
 
 这点非常关键。
 
@@ -319,10 +319,10 @@ shutdown protocol 就是用来消灭这类歧义的。
 
 锚点：
 
-- [`cli.js:2790`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2790)
-- [`cli.js:2800`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2800)
-- [`cli.js:7979`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L7979)
-- [`cli.js:14796`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L14796)
+- `cli.js:2790`
+- `cli.js:2800`
+- `cli.js:7979`
+- `cli.js:14796`
 
 这说明 Claude Code 对 team 的理解是：
 

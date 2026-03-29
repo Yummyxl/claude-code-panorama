@@ -150,7 +150,7 @@ Claude Code 收到的也不是一句纯文本。
 - `thinking_delta`
 - `compaction_delta`
 
-锚点：[`cli.js:16`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L16)
+锚点：`cli.js:16`
 
 这说明 Claude Code 的基本单位不是字符串，而是 block。
 
@@ -255,7 +255,7 @@ def agent_loop(messages, system_prompt, tools):
 
 主 loop 相关锚点在：
 
-- [`cli.js:36`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L36)
+- `cli.js:36`
 
 从本地代码可以确认，这里至少涉及：
 
@@ -268,7 +268,7 @@ def agent_loop(messages, system_prompt, tools):
 
 ### 流式 block 处理
 
-- [`cli.js:16`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L16)
+- `cli.js:16`
 
 本地可见的 block/delta 类型说明 Claude Code 不是只看文本。
 
@@ -281,8 +281,8 @@ def agent_loop(messages, system_prompt, tools):
 
 锚点：
 
-- [`cli.js:9689`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L9689)
-- [`cli.js:12624`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L12624)
+- `cli.js:9689`
+- `cli.js:12624`
 
 这说明在 Claude Code 里，“历史”本身也是结构化状态，而不只是文字记录。
 

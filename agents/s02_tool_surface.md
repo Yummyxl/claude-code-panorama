@@ -61,7 +61,7 @@ Claude Code 没有走这条路。
 - MCP 相关工具
 - Worktree 相关工具
 
-锚点：[`sdk-tools.d.ts:9`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L9)
+锚点：`sdk-tools.d.ts:9`
 
 这说明它做了一个非常清晰的架构选择：
 
@@ -149,7 +149,7 @@ Claude Code 没有走这条路。
 - PDF
 - PDF 拆页结果
 
-锚点：[`sdk-tools.d.ts:88`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L88)
+锚点：`sdk-tools.d.ts:88`
 
 这意味着 Claude Code 在输入层已经是多模态的。  
 模型不是只会读 `.ts` 和 `.py`。  
@@ -190,7 +190,7 @@ Claude Code 的“感知层”比传统代码助手宽得多。
 - `persistedOutputPath`
 - `persistedOutputSize`
 
-锚点：[`sdk-tools.d.ts:2165`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L2165)
+锚点：`sdk-tools.d.ts:2165`
 
 这说明 Bash 在 Claude Code 里不是“裸命令”，而是被 runtime 托管的动作。
 
@@ -215,7 +215,7 @@ Claude Code 的“感知层”比传统代码助手宽得多。
 - 有 `mode`
 - 有 `isolation`
 
-锚点：[`sdk-tools.d.ts:249`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L249)
+锚点：`sdk-tools.d.ts:249`
 
 这已经不是简单工具调用了。  
 这是在把“委派”做成正式运行时动作。
@@ -263,29 +263,29 @@ def execute_tool(tool_use):
 
 ### 工具总表
 
-- [`sdk-tools.d.ts:9`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L9)
+- `sdk-tools.d.ts:9`
 
 ### AgentInput
 
-- [`sdk-tools.d.ts:249`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L249)
+- `sdk-tools.d.ts:249`
 
 ### BashInput
 
-- [`sdk-tools.d.ts:287`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L287)
+- `sdk-tools.d.ts:287`
 
 ### FileEdit / FileRead / FileWrite
 
-- [`sdk-tools.d.ts:349`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L349)
-- [`sdk-tools.d.ts:367`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L367)
-- [`sdk-tools.d.ts:385`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L385)
+- `sdk-tools.d.ts:349`
+- `sdk-tools.d.ts:367`
+- `sdk-tools.d.ts:385`
 
 ### Todo / Web / AskUserQuestion / Worktree
 
-- [`sdk-tools.d.ts:514`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L514)
-- [`sdk-tools.d.ts:524`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L524)
-- [`sdk-tools.d.ts:534`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L534)
-- [`sdk-tools.d.ts:548`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L548)
-- [`sdk-tools.d.ts:2135`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L2135)
+- `sdk-tools.d.ts:514`
+- `sdk-tools.d.ts:524`
+- `sdk-tools.d.ts:534`
+- `sdk-tools.d.ts:548`
+- `sdk-tools.d.ts:2135`
 
 ---
 

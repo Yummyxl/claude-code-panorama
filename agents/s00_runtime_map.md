@@ -117,7 +117,7 @@ Claude Code 并不是“用户说一句，模型答一句”。
 - `files`
 - `skills`
 
-锚点：[`cli.js:39`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L39)
+锚点：`cli.js:39`
 
 这意味着 Claude Code 不是“借别人再包一层”，它本身就是正式客户端。
 
@@ -134,7 +134,7 @@ Claude Code 并不是“用户说一句，模型答一句”。
 
 拼成这一轮真正给模型看的 system prompt。
 
-锚点：[`cli.js:1480`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1480)
+锚点：`cli.js:1480`
 
 ### 第三层：agent loop 层
 
@@ -148,7 +148,7 @@ Claude Code 并不是“用户说一句，模型答一句”。
 - 执行工具
 - 把 `tool_result` 回流
 
-锚点：[`cli.js:36`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L36)
+锚点：`cli.js:36`
 
 ### 第四层：tool surface 层
 
@@ -166,7 +166,7 @@ Claude Code 并不是“用户说一句，模型答一句”。
 - MCP tools
 - Worktree tools
 
-锚点：[`sdk-tools.d.ts:9`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L9)
+锚点：`sdk-tools.d.ts:9`
 
 ### 第五层：context management 层
 
@@ -259,28 +259,28 @@ Claude Code 的复杂度不是来自“主循环难写”。
 
 ### Anthropic client 资源
 
-- [`cli.js:39`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L39)
+- `cli.js:39`
 
 ### system prompt 组装
 
-- [`cli.js:1480`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1480)
+- `cli.js:1480`
 
 ### 主 loop / ToolRunner
 
-- [`cli.js:36`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L36)
+- `cli.js:36`
 
 ### tool schema
 
-- [`sdk-tools.d.ts:9`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L9)
+- `sdk-tools.d.ts:9`
 
 ### memory / task / team / worktree / skills
 
-- memory：[`cli.js:1256`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1256)
-- task / todo：[`cli.js:1286`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1286)
-- team：[`cli.js:2790`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2790)
-- skills：[`cli.js:3345`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L3345)
-- bash runtime：[`cli.js:4588`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L4588)
-- worktree / CLI options：[`cli.js:16726`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L16726)
+- memory：`cli.js:1256`
+- task / todo：`cli.js:1286`
+- team：`cli.js:2790`
+- skills：`cli.js:3345`
+- bash runtime：`cli.js:4588`
+- worktree / CLI options：`cli.js:16726`
 
 ---
 

@@ -129,8 +129,8 @@ Claude Code 本地代码显示，它没有这么粗暴。
 
 锚点：
 
-- [`cli.js:3345`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L3345)
-- [`cli.js:3347`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L3347)
+- `cli.js:3345`
+- `cli.js:3347`
 
 这很重要，因为它说明 Claude Code 在处理的不是“多塞一点知识”，而是：
 
@@ -152,8 +152,8 @@ Claude Code 本地代码显示，它没有这么粗暴。
 
 锚点：
 
-- [`cli.js:4597`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L4597)
-- [`cli.js:7374`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L7374)
+- `cli.js:4597`
+- `cli.js:7374`
 
 这说明 plugin 能进入的不只是动作面，还包括表达面。
 
@@ -191,7 +191,7 @@ Claude Code 本地代码显示，它没有这么粗暴。
 - 可以接外部通知
 - 可以接外部协作入口
 
-锚点：[`cli.js:16726`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L16726)
+锚点：`cli.js:16726`
 
 这意味着 Claude Code 不只是自己向外接能力，  
 还允许外部系统反过来把它当成一个 runtime endpoint。
@@ -239,8 +239,8 @@ remote / channel / bridge
 
 后面你再去看：
 
-- [s12_tools_catalog.md](/Users/unicorn/aiprojects/claude/agents/s12_tools_catalog.md)
-- [s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
+- [s12_tools_catalog.md](./s12_tools_catalog.md)
+- [s13_prompt_catalog.md](./s13_prompt_catalog.md)
 
 会更容易理解为什么：
 

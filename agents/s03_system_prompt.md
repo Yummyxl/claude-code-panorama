@@ -120,7 +120,7 @@ Claude Code 的 prompt 不是“程序启动时写一次，以后一直沿用”
 
 **先把 prompt 拆成 section，再按当前状态组装。**
 
-锚点：[`cli.js:1480`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1480)
+锚点：`cli.js:1480`
 
 ---
 
@@ -350,7 +350,7 @@ e = O5([
 ])
 ```
 
-锚点：[`cli.js:16476`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L16476)
+锚点：`cli.js:16476`
 
 这几行直接说明：
 
@@ -380,7 +380,7 @@ e = O5([
 
 本地 bundle 顶部还能看到 `setSystemPromptSectionCacheEntry`。
 
-锚点：[`cli.js:8`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L8)
+锚点：`cli.js:8`
 
 这说明 Claude Code 不只是“会拼 prompt”，还把 section 当成了可缓存对象。
 
@@ -444,11 +444,11 @@ def build_system_prompt(state):
 
 ### prompt 总装入口
 
-- [`cli.js:1480`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1480)
+- `cli.js:1480`
 
 ### 单轮提交时的 prompt 组装与覆盖
 
-- [`cli.js:16476`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L16476)
+- `cli.js:16476`
 
 ### tone and style
 
@@ -473,7 +473,7 @@ def build_system_prompt(state):
 
 ### section cache
 
-- [`cli.js:8`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L8)
+- `cli.js:8`
 
 可以看到 `setSystemPromptSectionCacheEntry`。
 
@@ -485,9 +485,9 @@ def build_system_prompt(state):
 
 如果你想继续往下钻：
 
-- 看 [s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
+- 看 [s13_prompt_catalog.md](./s13_prompt_catalog.md)
   这里会把 section、顺序、条件、原文系统展开
-- 看 [s15_complete_rendered_prompts.md](/Users/unicorn/aiprojects/claude/agents/s15_complete_rendered_prompts.md)
+- 看 [s15_complete_rendered_prompts.md](./s15_complete_rendered_prompts.md)
   这里会告诉你不同运行条件下，最后真的渲染出来的 prompt 长什么样
 
 也就是说：

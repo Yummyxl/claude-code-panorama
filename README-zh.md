@@ -125,13 +125,15 @@ Claude Code
 
 主分析对象只有一个：
 
-- [`cli.js`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js)
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js`
 
 辅助证据只来自同一个安装包里的这些文件：
 
-- [`sdk-tools.d.ts`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts)
-- [`package.json`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/package.json)
-- [`vendor/`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/vendor)
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts`
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/package.json`
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/vendor/`
+
+这些都是你本机上的本地路径，所以文档里保留为代码引用，不做仓库内超链接。
 
 因此，这个仓库里所有靠谱的结论，都应该满足一条标准：
 
@@ -214,10 +216,10 @@ def agent_loop(messages):
 
 先看：
 
-- [s00_runtime_map.md](/Users/unicorn/aiprojects/claude/agents/s00_runtime_map.md)
-- [s01_agent_loop.md](/Users/unicorn/aiprojects/claude/agents/s01_agent_loop.md)
-- [s02_tool_surface.md](/Users/unicorn/aiprojects/claude/agents/s02_tool_surface.md)
-- [s03_system_prompt.md](/Users/unicorn/aiprojects/claude/agents/s03_system_prompt.md)
+- [s00_runtime_map.md](./agents/s00_runtime_map.md)
+- [s01_agent_loop.md](./agents/s01_agent_loop.md)
+- [s02_tool_surface.md](./agents/s02_tool_surface.md)
+- [s03_system_prompt.md](./agents/s03_system_prompt.md)
 
 这一轮的目标不是记细节，而是先看清 Claude Code 这台机器到底分哪几层。
 
@@ -235,10 +237,10 @@ def agent_loop(messages):
 
 最后再去看：
 
-- [s12_tools_catalog.md](/Users/unicorn/aiprojects/claude/agents/s12_tools_catalog.md)
-- [s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
-- [s14_toolrunner_callgraph.md](/Users/unicorn/aiprojects/claude/agents/s14_toolrunner_callgraph.md)
-- [s15_complete_rendered_prompts.md](/Users/unicorn/aiprojects/claude/agents/s15_complete_rendered_prompts.md)
+- [s12_tools_catalog.md](./agents/s12_tools_catalog.md)
+- [s13_prompt_catalog.md](./agents/s13_prompt_catalog.md)
+- [s14_toolrunner_callgraph.md](./agents/s14_toolrunner_callgraph.md)
+- [s15_complete_rendered_prompts.md](./agents/s15_complete_rendered_prompts.md)
 
 这一轮才是查表、对照源码、确认实现细节。
 
@@ -254,11 +256,11 @@ def agent_loop(messages):
 
 先读这几章，建立 Claude Code 的整体画面：
 
-1. [s00_runtime_map.md](/Users/unicorn/aiprojects/claude/agents/s00_runtime_map.md)
-2. [s01_agent_loop.md](/Users/unicorn/aiprojects/claude/agents/s01_agent_loop.md)
-3. [s02_tool_surface.md](/Users/unicorn/aiprojects/claude/agents/s02_tool_surface.md)
-4. [s03_system_prompt.md](/Users/unicorn/aiprojects/claude/agents/s03_system_prompt.md)
-5. [s_full.md](/Users/unicorn/aiprojects/claude/agents/s_full.md)
+1. [s00_runtime_map.md](./agents/s00_runtime_map.md)
+2. [s01_agent_loop.md](./agents/s01_agent_loop.md)
+3. [s02_tool_surface.md](./agents/s02_tool_surface.md)
+4. [s03_system_prompt.md](./agents/s03_system_prompt.md)
+5. [s_full.md](./agents/s_full.md)
 
 你读完这五章，应该能回答：
 
@@ -271,9 +273,9 @@ def agent_loop(messages):
 
 再读这几章，理解它怎么维持长时工作：
 
-6. [s04_compaction_and_memory.md](/Users/unicorn/aiprojects/claude/agents/s04_compaction_and_memory.md)
-7. [s05_task_todo_background.md](/Users/unicorn/aiprojects/claude/agents/s05_task_todo_background.md)
-8. [s11_memory_prompt_injection.md](/Users/unicorn/aiprojects/claude/agents/s11_memory_prompt_injection.md)
+6. [s04_compaction_and_memory.md](./agents/s04_compaction_and_memory.md)
+7. [s05_task_todo_background.md](./agents/s05_task_todo_background.md)
+8. [s11_memory_prompt_injection.md](./agents/s11_memory_prompt_injection.md)
 
 你读完这一层，应该能回答：
 
@@ -285,9 +287,9 @@ def agent_loop(messages):
 
 接着读：
 
-9. [s06_subagent_and_teams.md](/Users/unicorn/aiprojects/claude/agents/s06_subagent_and_teams.md)
-10. [s10_team_protocols.md](/Users/unicorn/aiprojects/claude/agents/s10_team_protocols.md)
-11. [s07_worktree_and_isolation.md](/Users/unicorn/aiprojects/claude/agents/s07_worktree_and_isolation.md)
+9. [s06_subagent_and_teams.md](./agents/s06_subagent_and_teams.md)
+10. [s10_team_protocols.md](./agents/s10_team_protocols.md)
+11. [s07_worktree_and_isolation.md](./agents/s07_worktree_and_isolation.md)
 
 你读完这一层，应该能回答：
 
@@ -299,12 +301,12 @@ def agent_loop(messages):
 
 最后读：
 
-12. [s08_mcp_plugins_remote.md](/Users/unicorn/aiprojects/claude/agents/s08_mcp_plugins_remote.md)
-13. [s09_auth_voice_telemetry.md](/Users/unicorn/aiprojects/claude/agents/s09_auth_voice_telemetry.md)
-13. [s12_tools_catalog.md](/Users/unicorn/aiprojects/claude/agents/s12_tools_catalog.md)
-14. [s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
-15. [s14_toolrunner_callgraph.md](/Users/unicorn/aiprojects/claude/agents/s14_toolrunner_callgraph.md)
-16. [s15_complete_rendered_prompts.md](/Users/unicorn/aiprojects/claude/agents/s15_complete_rendered_prompts.md)
+12. [s08_mcp_plugins_remote.md](./agents/s08_mcp_plugins_remote.md)
+13. [s09_auth_voice_telemetry.md](./agents/s09_auth_voice_telemetry.md)
+14. [s12_tools_catalog.md](./agents/s12_tools_catalog.md)
+15. [s13_prompt_catalog.md](./agents/s13_prompt_catalog.md)
+16. [s14_toolrunner_callgraph.md](./agents/s14_toolrunner_callgraph.md)
+17. [s15_complete_rendered_prompts.md](./agents/s15_complete_rendered_prompts.md)
 
 这几章解决的是：
 
@@ -318,23 +320,23 @@ def agent_loop(messages):
 
 ## 全部章节
 
-- [agents/s00_runtime_map.md](/Users/unicorn/aiprojects/claude/agents/s00_runtime_map.md)
-- [agents/s01_agent_loop.md](/Users/unicorn/aiprojects/claude/agents/s01_agent_loop.md)
-- [agents/s02_tool_surface.md](/Users/unicorn/aiprojects/claude/agents/s02_tool_surface.md)
-- [agents/s03_system_prompt.md](/Users/unicorn/aiprojects/claude/agents/s03_system_prompt.md)
-- [agents/s04_compaction_and_memory.md](/Users/unicorn/aiprojects/claude/agents/s04_compaction_and_memory.md)
-- [agents/s05_task_todo_background.md](/Users/unicorn/aiprojects/claude/agents/s05_task_todo_background.md)
-- [agents/s06_subagent_and_teams.md](/Users/unicorn/aiprojects/claude/agents/s06_subagent_and_teams.md)
-- [agents/s07_worktree_and_isolation.md](/Users/unicorn/aiprojects/claude/agents/s07_worktree_and_isolation.md)
-- [agents/s08_mcp_plugins_remote.md](/Users/unicorn/aiprojects/claude/agents/s08_mcp_plugins_remote.md)
-- [agents/s09_auth_voice_telemetry.md](/Users/unicorn/aiprojects/claude/agents/s09_auth_voice_telemetry.md)
-- [agents/s10_team_protocols.md](/Users/unicorn/aiprojects/claude/agents/s10_team_protocols.md)
-- [agents/s11_memory_prompt_injection.md](/Users/unicorn/aiprojects/claude/agents/s11_memory_prompt_injection.md)
-- [agents/s12_tools_catalog.md](/Users/unicorn/aiprojects/claude/agents/s12_tools_catalog.md)
-- [agents/s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
-- [agents/s14_toolrunner_callgraph.md](/Users/unicorn/aiprojects/claude/agents/s14_toolrunner_callgraph.md)
-- [agents/s15_complete_rendered_prompts.md](/Users/unicorn/aiprojects/claude/agents/s15_complete_rendered_prompts.md)
-- [agents/s_full.md](/Users/unicorn/aiprojects/claude/agents/s_full.md)
+- [agents/s00_runtime_map.md](./agents/s00_runtime_map.md)
+- [agents/s01_agent_loop.md](./agents/s01_agent_loop.md)
+- [agents/s02_tool_surface.md](./agents/s02_tool_surface.md)
+- [agents/s03_system_prompt.md](./agents/s03_system_prompt.md)
+- [agents/s04_compaction_and_memory.md](./agents/s04_compaction_and_memory.md)
+- [agents/s05_task_todo_background.md](./agents/s05_task_todo_background.md)
+- [agents/s06_subagent_and_teams.md](./agents/s06_subagent_and_teams.md)
+- [agents/s07_worktree_and_isolation.md](./agents/s07_worktree_and_isolation.md)
+- [agents/s08_mcp_plugins_remote.md](./agents/s08_mcp_plugins_remote.md)
+- [agents/s09_auth_voice_telemetry.md](./agents/s09_auth_voice_telemetry.md)
+- [agents/s10_team_protocols.md](./agents/s10_team_protocols.md)
+- [agents/s11_memory_prompt_injection.md](./agents/s11_memory_prompt_injection.md)
+- [agents/s12_tools_catalog.md](./agents/s12_tools_catalog.md)
+- [agents/s13_prompt_catalog.md](./agents/s13_prompt_catalog.md)
+- [agents/s14_toolrunner_callgraph.md](./agents/s14_toolrunner_callgraph.md)
+- [agents/s15_complete_rendered_prompts.md](./agents/s15_complete_rendered_prompts.md)
+- [agents/s_full.md](./agents/s_full.md)
 
 ---
 

@@ -125,7 +125,7 @@ Claude Code 本地设计不是这样。
 - 删除 worktree
 - 删除 worktree branch
 
-锚点：[`cli.js:1280`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1280)
+锚点：`cli.js:1280`
 
 本地 schema 里还能直接看到：
 
@@ -134,8 +134,8 @@ Claude Code 本地设计不是这样。
 
 锚点：
 
-- [`sdk-tools.d.ts:2135`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L2135)
-- [`sdk-tools.d.ts:2141`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L2141)
+- `sdk-tools.d.ts:2135`
+- `sdk-tools.d.ts:2141`
 
 这说明两件事：
 
@@ -179,7 +179,7 @@ git worktree add ...
 
 ## worktree 和 subagent / team 的关系
 
-这一章最好和 [s06_subagent_and_teams.md](/Users/unicorn/aiprojects/claude/agents/s06_subagent_and_teams.md) 连起来看。
+这一章最好和 [s06_subagent_and_teams.md](./s06_subagent_and_teams.md) 连起来看。
 
 `s06` 解释了：
 

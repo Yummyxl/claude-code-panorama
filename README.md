@@ -73,13 +73,15 @@ This project is strict about evidence.
 
 It analyzes the local installed package only. The main artifact is:
 
-- [`cli.js`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js)
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js`
 
 Supporting evidence comes from the same local package:
 
-- [`sdk-tools.d.ts`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts)
-- [`package.json`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/package.json)
-- [`vendor/`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/vendor)
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts`
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/package.json`
+- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/vendor/`
+
+These are machine-local paths, so they are rendered as code references instead of repository links.
 
 That means the working standard for every chapter is:
 
@@ -143,11 +145,11 @@ The best progression is:
 
 Start here:
 
-1. [s00_runtime_map.md](/Users/unicorn/aiprojects/claude/agents/s00_runtime_map.md)
-2. [s01_agent_loop.md](/Users/unicorn/aiprojects/claude/agents/s01_agent_loop.md)
-3. [s02_tool_surface.md](/Users/unicorn/aiprojects/claude/agents/s02_tool_surface.md)
-4. [s03_system_prompt.md](/Users/unicorn/aiprojects/claude/agents/s03_system_prompt.md)
-5. [s_full.md](/Users/unicorn/aiprojects/claude/agents/s_full.md)
+1. [s00_runtime_map.md](./agents/s00_runtime_map.md)
+2. [s01_agent_loop.md](./agents/s01_agent_loop.md)
+3. [s02_tool_surface.md](./agents/s02_tool_surface.md)
+4. [s03_system_prompt.md](./agents/s03_system_prompt.md)
+5. [s_full.md](./agents/s_full.md)
 
 After these chapters, you should be able to answer:
 
@@ -160,9 +162,9 @@ After these chapters, you should be able to answer:
 
 Then read:
 
-6. [s04_compaction_and_memory.md](/Users/unicorn/aiprojects/claude/agents/s04_compaction_and_memory.md)
-7. [s05_task_todo_background.md](/Users/unicorn/aiprojects/claude/agents/s05_task_todo_background.md)
-8. [s11_memory_prompt_injection.md](/Users/unicorn/aiprojects/claude/agents/s11_memory_prompt_injection.md)
+6. [s04_compaction_and_memory.md](./agents/s04_compaction_and_memory.md)
+7. [s05_task_todo_background.md](./agents/s05_task_todo_background.md)
+8. [s11_memory_prompt_injection.md](./agents/s11_memory_prompt_injection.md)
 
 These chapters explain:
 
@@ -174,9 +176,9 @@ These chapters explain:
 
 Then read:
 
-9. [s06_subagent_and_teams.md](/Users/unicorn/aiprojects/claude/agents/s06_subagent_and_teams.md)
-10. [s10_team_protocols.md](/Users/unicorn/aiprojects/claude/agents/s10_team_protocols.md)
-11. [s07_worktree_and_isolation.md](/Users/unicorn/aiprojects/claude/agents/s07_worktree_and_isolation.md)
+9. [s06_subagent_and_teams.md](./agents/s06_subagent_and_teams.md)
+10. [s10_team_protocols.md](./agents/s10_team_protocols.md)
+11. [s07_worktree_and_isolation.md](./agents/s07_worktree_and_isolation.md)
 
 These chapters explain:
 
@@ -188,12 +190,12 @@ These chapters explain:
 
 Finally read:
 
-12. [s08_mcp_plugins_remote.md](/Users/unicorn/aiprojects/claude/agents/s08_mcp_plugins_remote.md)
-13. [s09_auth_voice_telemetry.md](/Users/unicorn/aiprojects/claude/agents/s09_auth_voice_telemetry.md)
-14. [s12_tools_catalog.md](/Users/unicorn/aiprojects/claude/agents/s12_tools_catalog.md)
-15. [s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
-16. [s14_toolrunner_callgraph.md](/Users/unicorn/aiprojects/claude/agents/s14_toolrunner_callgraph.md)
-17. [s15_complete_rendered_prompts.md](/Users/unicorn/aiprojects/claude/agents/s15_complete_rendered_prompts.md)
+12. [s08_mcp_plugins_remote.md](./agents/s08_mcp_plugins_remote.md)
+13. [s09_auth_voice_telemetry.md](./agents/s09_auth_voice_telemetry.md)
+14. [s12_tools_catalog.md](./agents/s12_tools_catalog.md)
+15. [s13_prompt_catalog.md](./agents/s13_prompt_catalog.md)
+16. [s14_toolrunner_callgraph.md](./agents/s14_toolrunner_callgraph.md)
+17. [s15_complete_rendered_prompts.md](./agents/s15_complete_rendered_prompts.md)
 
 These answer:
 
@@ -227,23 +229,23 @@ That is why this repository keeps returning to the same claim:
 
 ## Chapter Index
 
-- [agents/s00_runtime_map.md](/Users/unicorn/aiprojects/claude/agents/s00_runtime_map.md)
-- [agents/s01_agent_loop.md](/Users/unicorn/aiprojects/claude/agents/s01_agent_loop.md)
-- [agents/s02_tool_surface.md](/Users/unicorn/aiprojects/claude/agents/s02_tool_surface.md)
-- [agents/s03_system_prompt.md](/Users/unicorn/aiprojects/claude/agents/s03_system_prompt.md)
-- [agents/s04_compaction_and_memory.md](/Users/unicorn/aiprojects/claude/agents/s04_compaction_and_memory.md)
-- [agents/s05_task_todo_background.md](/Users/unicorn/aiprojects/claude/agents/s05_task_todo_background.md)
-- [agents/s06_subagent_and_teams.md](/Users/unicorn/aiprojects/claude/agents/s06_subagent_and_teams.md)
-- [agents/s07_worktree_and_isolation.md](/Users/unicorn/aiprojects/claude/agents/s07_worktree_and_isolation.md)
-- [agents/s08_mcp_plugins_remote.md](/Users/unicorn/aiprojects/claude/agents/s08_mcp_plugins_remote.md)
-- [agents/s09_auth_voice_telemetry.md](/Users/unicorn/aiprojects/claude/agents/s09_auth_voice_telemetry.md)
-- [agents/s10_team_protocols.md](/Users/unicorn/aiprojects/claude/agents/s10_team_protocols.md)
-- [agents/s11_memory_prompt_injection.md](/Users/unicorn/aiprojects/claude/agents/s11_memory_prompt_injection.md)
-- [agents/s12_tools_catalog.md](/Users/unicorn/aiprojects/claude/agents/s12_tools_catalog.md)
-- [agents/s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
-- [agents/s14_toolrunner_callgraph.md](/Users/unicorn/aiprojects/claude/agents/s14_toolrunner_callgraph.md)
-- [agents/s15_complete_rendered_prompts.md](/Users/unicorn/aiprojects/claude/agents/s15_complete_rendered_prompts.md)
-- [agents/s_full.md](/Users/unicorn/aiprojects/claude/agents/s_full.md)
+- [agents/s00_runtime_map.md](./agents/s00_runtime_map.md)
+- [agents/s01_agent_loop.md](./agents/s01_agent_loop.md)
+- [agents/s02_tool_surface.md](./agents/s02_tool_surface.md)
+- [agents/s03_system_prompt.md](./agents/s03_system_prompt.md)
+- [agents/s04_compaction_and_memory.md](./agents/s04_compaction_and_memory.md)
+- [agents/s05_task_todo_background.md](./agents/s05_task_todo_background.md)
+- [agents/s06_subagent_and_teams.md](./agents/s06_subagent_and_teams.md)
+- [agents/s07_worktree_and_isolation.md](./agents/s07_worktree_and_isolation.md)
+- [agents/s08_mcp_plugins_remote.md](./agents/s08_mcp_plugins_remote.md)
+- [agents/s09_auth_voice_telemetry.md](./agents/s09_auth_voice_telemetry.md)
+- [agents/s10_team_protocols.md](./agents/s10_team_protocols.md)
+- [agents/s11_memory_prompt_injection.md](./agents/s11_memory_prompt_injection.md)
+- [agents/s12_tools_catalog.md](./agents/s12_tools_catalog.md)
+- [agents/s13_prompt_catalog.md](./agents/s13_prompt_catalog.md)
+- [agents/s14_toolrunner_callgraph.md](./agents/s14_toolrunner_callgraph.md)
+- [agents/s15_complete_rendered_prompts.md](./agents/s15_complete_rendered_prompts.md)
+- [agents/s_full.md](./agents/s_full.md)
 
 ---
 

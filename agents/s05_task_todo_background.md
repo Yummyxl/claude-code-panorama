@@ -134,14 +134,14 @@ Fix the failing login flow, run the tests, and summarize the root cause.
 
 锚点：
 
-- [`cli.js:297`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L297)
-- [`cli.js:1286`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1286)
+- `cli.js:297`
+- `cli.js:1286`
 
 从本地 schema 又能看到对应输入定义：
 
-- [`sdk-tools.d.ts:319`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L319)
-- [`sdk-tools.d.ts:463`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L463)
-- [`sdk-tools.d.ts:514`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L514)
+- `sdk-tools.d.ts:319`
+- `sdk-tools.d.ts:463`
+- `sdk-tools.d.ts:514`
 
 这说明：
 
@@ -162,7 +162,7 @@ Fix the failing login flow, run the tests, and summarize the root cause.
 - `persistedOutputPath`
 - `persistedOutputSize`
 
-锚点：[`cli.js:4588`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L4588)
+锚点：`cli.js:4588`
 
 这说明 Claude Code 对 shell 的理解不是：
 
@@ -285,9 +285,9 @@ def handle_big_task():
 
 这一章学会之后，你再去看：
 
-- [s06_subagent_and_teams.md](/Users/unicorn/aiprojects/claude/agents/s06_subagent_and_teams.md)
+- [s06_subagent_and_teams.md](./s06_subagent_and_teams.md)
   会更容易理解为什么多 agent 需要共享过程状态
-- [s07_worktree_and_isolation.md](/Users/unicorn/aiprojects/claude/agents/s07_worktree_and_isolation.md)
+- [s07_worktree_and_isolation.md](./s07_worktree_and_isolation.md)
   会更容易理解为什么并行执行不仅要分目录，也要分任务
 
 也就是说：

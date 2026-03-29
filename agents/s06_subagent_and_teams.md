@@ -119,8 +119,8 @@ subagent 的本质是：
 
 锚点：
 
-- [`sdk-tools.d.ts:55`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L55)
-- [`sdk-tools.d.ts:249`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L249)
+- `sdk-tools.d.ts:55`
+- `sdk-tools.d.ts:249`
 
 所以最准确的理解是：
 
@@ -221,7 +221,7 @@ team     = organization
 - `mode`
 - `isolation`
 
-锚点：[`sdk-tools.d.ts:249`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts#L249)
+锚点：`sdk-tools.d.ts:249`
 
 这说明 subagent 不是自由发挥，而是带：
 
@@ -242,7 +242,7 @@ team     = organization
 - `--team-name`
 - `--teammate-mode auto|tmux|in-process`
 
-锚点：[`cli.js:16726`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L16726)
+锚点：`cli.js:16726`
 
 这说明 team 不是抽象概念，而是启动级 runtime 形态。
 
@@ -257,9 +257,9 @@ team     = organization
 
 锚点：
 
-- [`cli.js:2790`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2790)
-- [`cli.js:2800`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L2800)
-- [`cli.js:7979`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L7979)
+- `cli.js:2790`
+- `cli.js:2800`
+- `cli.js:7979`
 
 这几处证据放在一起，足以排除一种常见误解：
 
@@ -366,7 +366,7 @@ team 真正多出来的是：
 这正好是 Claude Code 本地设计在反对的东西。  
 一旦进入真实协作，光靠自然语言是不够稳定的。
 
-后面的 [s10_team_protocols.md](/Users/unicorn/aiprojects/claude/agents/s10_team_protocols.md) 就是在把这个问题彻底拆开。
+后面的 [s10_team_protocols.md](./s10_team_protocols.md) 就是在把这个问题彻底拆开。
 
 ---
 
@@ -420,9 +420,9 @@ def team_runtime():
 
 接下来：
 
-- [s07_worktree_and_isolation.md](/Users/unicorn/aiprojects/claude/agents/s07_worktree_and_isolation.md)
+- [s07_worktree_and_isolation.md](./s07_worktree_and_isolation.md)
   解释并行执行为什么需要目录隔离
-- [s10_team_protocols.md](/Users/unicorn/aiprojects/claude/agents/s10_team_protocols.md)
+- [s10_team_protocols.md](./s10_team_protocols.md)
   解释 team 内部为什么必须协议化
 
 也就是说：

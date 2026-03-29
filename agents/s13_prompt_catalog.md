@@ -87,7 +87,7 @@ H = [
 J = await ZXq(H)
 ```
 
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)
+锚点：`cli.js:1495`
 
 所以 Claude Code 的 prompt 有两个层次：
 
@@ -143,7 +143,7 @@ IMPORTANT: You must NEVER generate or guess URLs for the user unless you are con
 ```
 
 `hXq` 在本地就是上面第二行那整段安全边界说明。  
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)、[`cli.js:1529`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1529)
+锚点：`cli.js:1495`、`cli.js:1529`
 
 #### 条件
 
@@ -180,7 +180,7 @@ The system will automatically compress prior messages in your conversation as it
 ```
 
 `B4z()` 在本地返回的就是 hooks 这一整句。  
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)、[`cli.js:1519`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1519)
+锚点：`cli.js:1495`、`cli.js:1519`
 
 #### 条件
 
@@ -229,7 +229,7 @@ If the user asks for help or wants to give feedback inform them of the following
 To give feedback, users should report the issue at https://github.com/anthropics/claude-code/issues
 ```
 
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)
+锚点：`cli.js:1495`
 
 #### 条件
 
@@ -268,7 +268,7 @@ Examples of the kind of risky actions that warrant user confirmation:
 When you encounter an obstacle, do not use destructive actions as a shortcut to simply make it go away. For instance, try to identify root causes and fix underlying issues rather than bypassing safety checks (e.g. --no-verify). If you discover unexpected state like unfamiliar files, branches, or configuration, investigate before deleting or overwriting, as it may represent the user's in-progress work. For example, typically resolve merge conflicts rather than discarding changes; similarly, if a lock file exists, investigate what process holds it rather than deleting it. In short: only take risky actions carefully, and when in doubt, ask before acting. Follow both the spirit and letter of these instructions - measure twice, cut once.
 ```
 
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)
+锚点：`cli.js:1495`
 
 #### 条件
 
@@ -301,7 +301,7 @@ When you encounter an obstacle, do not use destructive actions as a shortcut to 
 - `$M = "ToolSearch"`
 - `h2 = "AskUserQuestion"`
 
-锚点：[`cli.js:3682722`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L3682722)、[`cli.js:3686357`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L3686357)、[`cli.js:5289076`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L5289076)
+锚点：`cli.js:3682722`、`cli.js:3686357`、`cli.js:5289076`
 
 #### 永远存在的基础规则
 
@@ -358,7 +358,7 @@ For broader codebase exploration and deep research, use the Agent tool with suba
 ```
 
 第二句里的 `general-purpose` 在本地来自 built-in agent 定义。  
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)、[`cli.js:1540`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1540)
+锚点：`cli.js:1495`、`cli.js:1540`
 
 #### 如果 skill 目录存在且工具里有 `Skill`
 
@@ -405,7 +405,7 @@ When referencing GitHub issues or pull requests, use the owner/repo#123 format (
 Do not use a colon before tool calls. Your tool calls may not be shown directly in the output, so text like "Let me read the file:" followed by a read tool call should just be "Let me read the file." with a period.
 ```
 
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)
+锚点：`cli.js:1495`
 
 #### 条件
 
@@ -432,7 +432,7 @@ Focus text output on:
 If you can say it in one sentence, don't use three. Prefer short, direct sentences over long explanations. This does not apply to code or tool calls.
 ```
 
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)
+锚点：`cli.js:1495`
 
 #### 条件
 
@@ -477,7 +477,7 @@ __SYSTEM_PROMPT_DYNAMIC_BOUNDARY__
 - auto memory enable -> 走 auto memory 路径
 - 都不启用 -> 返回 `null`
 
-锚点：[`cli.js:1256`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1256)
+锚点：`cli.js:1256`
 
 #### 条件
 
@@ -533,7 +533,7 @@ Claude Code is available as a CLI in the terminal, desktop app (Mac/Windows), we
 Fast mode for Claude Code uses the same Claude Opus 4.6 model with faster output. It does NOT switch to a different model. It can be toggled with /fast.
 ```
 
-锚点：[`cli.js:1495`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1495)
+锚点：`cli.js:1495`
 
 #### 条件
 
@@ -715,7 +715,7 @@ async function ZXq(q){
 }
 ```
 
-锚点：[`cli.js:1400`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1400)
+锚点：`cli.js:1400`
 
 它意味着：
 

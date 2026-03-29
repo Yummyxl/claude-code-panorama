@@ -76,7 +76,7 @@ Claude Code 本地代码说明，两种都不对。
 - `AutoMem`
 - `TeamMem`
 
-锚点：[`cli.js:1256`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1256)
+锚点：`cli.js:1256`
 
 这说明 Claude Code 从一开始就没有把 memory 设计成“一坨统一文本”。
 
@@ -106,7 +106,7 @@ Claude Code 本地代码说明，两种都不对。
 
 - `<team-memory-content source="shared">`
 
-锚点：[`cli.js:1256`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1256)
+锚点：`cli.js:1256`
 
 这说明 TeamMem 不是“聊天记录顺手共享一下”，而是正式的共享背景层。
 
@@ -127,7 +127,7 @@ Claude Code 并不是把 memory 临时塞到用户消息里。
 
 - `memory` 是 system prompt 的正式 section
 
-锚点：[`cli.js:1480`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1480)
+锚点：`cli.js:1480`
 
 也就是说，Claude Code 的做法是：
 
@@ -234,9 +234,9 @@ memory 不是“历史里自己长出来的”，
 
 这章最好和两章一起看：
 
-- [s04_compaction_and_memory.md](/Users/unicorn/aiprojects/claude/agents/s04_compaction_and_memory.md)
+- [s04_compaction_and_memory.md](./s04_compaction_and_memory.md)
   那一章负责把 compaction 和 memory 的边界钉死
-- [s13_prompt_catalog.md](/Users/unicorn/aiprojects/claude/agents/s13_prompt_catalog.md)
+- [s13_prompt_catalog.md](./s13_prompt_catalog.md)
   那一章会继续展开 memory section 在 prompt 装配线中的真实位置
 
 所以：

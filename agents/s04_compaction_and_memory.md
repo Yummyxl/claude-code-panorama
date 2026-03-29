@@ -62,8 +62,8 @@ compaction 解决的是：
 
 锚点：
 
-- [`cli.js:9689`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L9689)
-- [`cli.js:12624`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L12624)
+- `cli.js:9689`
+- `cli.js:12624`
 
 ---
 
@@ -91,7 +91,7 @@ memory 解决的是：
 - `AutoMem`
 - `TeamMem`
 
-锚点：[`cli.js:1256`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1256)
+锚点：`cli.js:1256`
 
 ---
 
@@ -146,7 +146,7 @@ memory 则接在 system prompt 这一侧。
 
 - `memory` 是一个正式 section
 
-锚点：[`cli.js:1480`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1480)
+锚点：`cli.js:1480`
 
 这意味着 memory 不是“从历史里自动推理出来的东西”，而是运行时在每轮 request 前主动注入的背景材料。
 
@@ -196,16 +196,16 @@ def next_turn(messages, state):
 
 ### memory 是 system prompt section
 
-- [`cli.js:1480`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1480)
+- `cli.js:1480`
 
 ### memory 来源枚举
 
-- [`cli.js:1256`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L1256)
+- `cli.js:1256`
 
 ### compaction block 必须保留完整内容
 
-- [`cli.js:9689`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L9689)
-- [`cli.js:12624`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L12624)
+- `cli.js:9689`
+- `cli.js:12624`
 
 ### compaction 也是正式 hook 生命周期
 
@@ -216,8 +216,8 @@ def next_turn(messages, state):
 
 锚点：
 
-- [`cli.js:8162`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L8162)
-- [`cli.js:14796`](/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js#L14796)
+- `cli.js:8162`
+- `cli.js:14796`
 
 这说明 compaction 不是内部小技巧，而是正式生命周期事件。
 
