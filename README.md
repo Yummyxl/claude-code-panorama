@@ -1,6 +1,6 @@
 # Claude Code Local Runtime Walkthrough
 
-Chinese overview: [README-zh.md](/Users/unicorn/aiprojects/claude/README-zh.md)
+Chinese overview: [README-zh.md](./README-zh.md)
 
 ## Start With The Right Question
 
