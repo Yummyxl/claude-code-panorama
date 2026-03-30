@@ -81,7 +81,29 @@
 
 ## Claude Code 工具面的完整清单
 
-从本地 `ToolInputSchemas` 可以直接确认，Claude Code 至少定义了这些输入工具：
+这里要先把口径说清楚。
+
+本章这份清单讲的是：
+
+**`sdk-tools.d.ts` 里显式导出的 SDK schema 工具面。**
+
+它非常重要，但它不等于“prompt 里对模型可见的全部 runtime 工具名”。
+
+例如在其他章节里你还会看到：
+
+- `Read / Edit / Write`
+- `TaskCreate`
+- `Skill`
+
+这些名字出现在 prompt runtime 或运行时映射层里。  
+所以最准确的理解是：
+
+- `s12` 主要整理 SDK schema 暴露出来的工具定义
+- `s13` 会继续解释 prompt 里可见的 runtime 工具名映射
+
+只要先把这层边界记住，后面你看到 `FileRead` 和 `Read`、`TodoWrite` 和 `TaskCreate` 这些名字并存时，就不会误以为文档前后矛盾。
+
+从本地 `ToolInputSchemas` 可以直接确认，SDK schema 至少定义了这些输入工具：
 
 - `AgentInput`
 - `BashInput`
