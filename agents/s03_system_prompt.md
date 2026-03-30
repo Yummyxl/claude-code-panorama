@@ -10,7 +10,7 @@
 
 这种理解太浅了。
 
-从本地 `cli.js` 看，Claude Code 的 system prompt 更准确的定义是：
+从实现上看，Claude Code 的 system prompt 更准确的定义是：
 
 **运行时把当前工作状态翻译给模型的一段结构化文本。**
 
@@ -120,7 +120,7 @@ Claude Code 的 prompt 不是“程序启动时写一次，以后一直沿用”
 
 **先把 prompt 拆成 section，再按当前状态组装。**
 
-锚点：`cli.js:1480`
+锚点：`实现锚点`
 
 ---
 
@@ -145,7 +145,7 @@ Claude Code 的 prompt 不是“程序启动时写一次，以后一直沿用”
 
 ---
 
-## 本地代码里能直接确认哪些 section
+## 实现里能直接确认哪些 section
 
 从 `PD(...)` 的装配过程里，可以直接看到这些 section 名称：
 
@@ -220,7 +220,7 @@ Claude Code 的 prompt 不是“程序启动时写一次，以后一直沿用”
 这里要特别注意一个容易讲反的点：
 
 - 从运行时意义上说，环境信息很像“基础信息”
-- 但从本地 `PD(...)` 的真实装配顺序看，`env_info_simple` 是放在动态 `J` 里的
+- 但从`PD(...)` 的真实装配顺序看，`env_info_simple` 是放在动态 `J` 里的
 
 也就是说，环境信息在概念上很基础，在实现上却是“每轮按当前状态重算的动态段”。
 
@@ -242,7 +242,7 @@ Claude Code 的 prompt 不是“程序启动时写一次，以后一直沿用”
 
 ### 第一段：角色定义
 
-本地代码里有非常关键的一句：
+实现里有非常关键的一句：
 
 ```text
 You are an agent for Claude Code, Anthropic's official CLI for Claude. Given the user's message, you should use the tools available to complete the task. Do what has been asked; nothing more, nothing less.
@@ -262,7 +262,7 @@ You are an agent for Claude Code, Anthropic's official CLI for Claude. Given the
 Claude Code 不只是把 tool schema 暴露给模型。  
 它还会在 prompt 里给出工具使用规则。
 
-比如从本地 prompt 文本可以直接看到，系统会强调：
+比如从实现中的 prompt 文本可以直接看到，系统会强调：
 
 - 有专门工具时不要默认退回 Bash
 - 文件读取要优先走文件工具
@@ -278,7 +278,7 @@ Claude Code 不只是把 tool schema 暴露给模型。
 
 Claude Code 把“怎么说”和“说多少”拆开管理。
 
-从本地代码能看到：
+从实现能看到：
 
 - `a4z()` 负责 tone and style
 - `o4z()` 负责 output efficiency
@@ -358,7 +358,7 @@ e = O5([
 ])
 ```
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 这几行直接说明：
 
@@ -386,9 +386,9 @@ e = O5([
 
 ### 优势 3：缓存有了边界
 
-本地 bundle 顶部还能看到 `setSystemPromptSectionCacheEntry`。
+运行时实现 顶部还能看到 `setSystemPromptSectionCacheEntry`。
 
-锚点：`cli.js:8`
+锚点：`实现锚点`
 
 这说明 Claude Code 不只是“会拼 prompt”，还把 section 当成了可缓存对象。
 
@@ -448,15 +448,15 @@ def build_system_prompt(state):
 
 ---
 
-## 本地代码锚点
+## 实现锚点
 
 ### prompt 总装入口
 
-- `cli.js:1480`
+- `实现锚点`
 
 ### 单轮提交时的 prompt 组装与覆盖
 
-- `cli.js:16476`
+- `实现锚点`
 
 ### tone and style
 
@@ -481,7 +481,7 @@ def build_system_prompt(state):
 
 ### section cache
 
-- `cli.js:8`
+- `实现锚点`
 
 可以看到 `setSystemPromptSectionCacheEntry`。
 

@@ -39,6 +39,15 @@
 
 ---
 
+这里也先说明一个贯穿全书的口径：
+
+- 这一章多数地方先沿用工具定义层的名字，例如 `FileRead`
+- 后面讲 prompt/runtime 时，还会出现模型直接看到的名字，例如 `Read`
+
+两套名字不是互相冲突，而是同一套能力在不同层的命名方式。
+
+---
+
 ## Claude Code 不把所有动作都塞进 Bash
 
 这是理解工具面的第一关键点。
@@ -49,7 +58,7 @@
 
 Claude Code 没有走这条路。
 
-从本地 schema 看，它显式定义了很多工具：
+从工具定义看，它显式定义了很多工具：
 
 - Agent
 - Bash
@@ -61,7 +70,7 @@ Claude Code 没有走这条路。
 - MCP 相关工具
 - Worktree 相关工具
 
-锚点：`sdk-tools.d.ts:9`
+锚点：`工具定义锚点`
 
 这说明它做了一个非常清晰的架构选择：
 
@@ -137,7 +146,7 @@ Claude Code 没有走这条路。
 ## 为什么 `FileRead` 这么重要
 
 如果只看名字，`FileRead` 很普通。  
-但从本地 schema 看，它实际上非常关键。
+但从工具定义 看，它实际上非常关键。
 
 因为它说明 Claude Code 并不是只把“文件”理解成纯文本。
 
@@ -149,7 +158,7 @@ Claude Code 没有走这条路。
 - PDF
 - PDF 拆页结果
 
-锚点：`sdk-tools.d.ts:88`
+锚点：`工具定义锚点`
 
 这意味着 Claude Code 在输入层已经是多模态的。  
 模型不是只会读 `.ts` 和 `.py`。  
@@ -178,7 +187,7 @@ Claude Code 的“感知层”比传统代码助手宽得多。
 所以 Claude Code 并没有排斥 Bash。  
 它只是把 Bash 放在一个更成熟的运行时环境里。
 
-从本地输出定义看，`BashOutput` 不只是：
+从输出定义看，`BashOutput` 不只是：
 
 - `stdout`
 - `stderr`
@@ -190,7 +199,7 @@ Claude Code 的“感知层”比传统代码助手宽得多。
 - `persistedOutputPath`
 - `persistedOutputSize`
 
-锚点：`sdk-tools.d.ts:2165`
+锚点：`工具定义锚点`
 
 这说明 Bash 在 Claude Code 里不是“裸命令”，而是被 runtime 托管的动作。
 
@@ -215,7 +224,7 @@ Claude Code 的“感知层”比传统代码助手宽得多。
 - 有 `mode`
 - 有 `isolation`
 
-锚点：`sdk-tools.d.ts:249`
+锚点：`工具定义锚点`
 
 这已经不是简单工具调用了。  
 这是在把“委派”做成正式运行时动作。
@@ -259,33 +268,33 @@ def execute_tool(tool_use):
 
 ---
 
-## 本地代码锚点
+## 实现锚点
 
 ### 工具总表
 
-- `sdk-tools.d.ts:9`
+- `工具定义锚点`
 
 ### AgentInput
 
-- `sdk-tools.d.ts:249`
+- `工具定义锚点`
 
 ### BashInput
 
-- `sdk-tools.d.ts:287`
+- `工具定义锚点`
 
 ### FileEdit / FileRead / FileWrite
 
-- `sdk-tools.d.ts:349`
-- `sdk-tools.d.ts:367`
-- `sdk-tools.d.ts:385`
+- `工具定义锚点`
+- `工具定义锚点`
+- `工具定义锚点`
 
 ### Todo / Web / AskUserQuestion / Worktree
 
-- `sdk-tools.d.ts:514`
-- `sdk-tools.d.ts:524`
-- `sdk-tools.d.ts:534`
-- `sdk-tools.d.ts:548`
-- `sdk-tools.d.ts:2135`
+- `工具定义锚点`
+- `工具定义锚点`
+- `工具定义锚点`
+- `工具定义锚点`
+- `工具定义锚点`
 
 ---
 

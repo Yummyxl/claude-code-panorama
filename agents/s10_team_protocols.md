@@ -70,7 +70,7 @@ Claude Code 这套 team 设计最值得学的地方，不是它有 mailbox，
 Just writing a response in text is not visible to others on your team - you MUST use the SendMessage tool.
 ```
 
-锚点：`cli.js:2790`
+锚点：`实现锚点`
 
 这几乎就是整套 protocol 的总纲。
 
@@ -120,7 +120,7 @@ I think the auth flow is broken around token refresh.
 
 ## Claude Code 的 team protocol 至少包含什么
 
-从本地代码能直接确认，它不是一条消息类型，而是一组 typed messages。
+从实现能直接确认，它不是一条消息类型，而是一组 typed messages。
 
 至少包括：
 
@@ -135,8 +135,8 @@ I think the auth flow is broken around token refresh.
 
 锚点：
 
-- `cli.js:2790`
-- `cli.js:7979`
+- `实现锚点`
+- `实现锚点`
 
 这已经说明团队协作不是自然语言习惯，而是正式协议面。
 
@@ -225,7 +225,7 @@ I think the auth flow is broken around token refresh.
 
 ## 协议消息真正长什么样
 
-本地代码并不是只给了“消息名字”，还直接暴露了这些 helper：
+实现并不是只给了“消息名字”，还直接暴露了这些 helper：
 
 - `uF1(...)`
   把权限请求打包成 `permission_request`
@@ -242,7 +242,7 @@ I think the auth flow is broken around token refresh.
 - `FF1(...)`
   打包 `shutdown_rejected`
 
-锚点：`cli.js:2797`
+锚点：`实现锚点`
 
 这点非常关键。
 
@@ -292,7 +292,7 @@ worker 想调用某个高风险工具
 
 Claude Code 明显更谨慎。
 
-从本地消息集合就能看出，shutdown 不是一个单向通知，而是 request / approved / rejected 三段式。
+从现有协议消息集合就能看出，shutdown 不是一个单向通知，而是 request / approved / rejected 三段式。
 
 这说明它把“退出”也视为一种必须协商的状态迁移，而不是随便结束线程。
 
@@ -308,9 +308,9 @@ shutdown protocol 就是用来消灭这类歧义的。
 
 ---
 
-## 本地代码说明 team 是“运行时协议”，不是“prompt 魔法”
+## 实现说明 team 是“运行时协议”，不是“prompt 魔法”
 
-从本地 bundle 可见：
+从运行时实现 可见：
 
 - 有 team prompt
 - 有 in-process teammate loop
@@ -319,10 +319,10 @@ shutdown protocol 就是用来消灭这类歧义的。
 
 锚点：
 
-- `cli.js:2790`
-- `cli.js:2800`
-- `cli.js:7979`
-- `cli.js:14796`
+- `实现锚点`
+- `实现锚点`
+- `实现锚点`
+- `实现锚点`
 
 这说明 Claude Code 对 team 的理解是：
 

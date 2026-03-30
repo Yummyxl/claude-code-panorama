@@ -10,7 +10,7 @@
 
 这三种理解都不够。
 
-**从本地安装包的代码来看，Claude Code 更准确的身份是：一个围绕大模型构建出来的本地 agent harness。**
+**从实现上看，Claude Code 更准确的身份是：一个围绕大模型构建出来的 agent harness。**
 
 它不是模型本身。  
 它也不是“替模型思考”的控制器。  
@@ -121,23 +121,20 @@ Claude Code
 
 这点要说得非常严格。
 
-本仓库只分析你本机安装包里的本地文件，不做线上仓库对照，不拿公开文档反推实现。
+本仓库只分析当前交付实现，不做线上仓库对照，不拿公开文档反推实现。
 
-主分析对象只有一个：
+主分析材料包括：
 
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js`
+- `实现主干`
+- `工具定义`
+- `包定义`
+- `vendor 目录`
 
-辅助证据只来自同一个安装包里的这些文件：
-
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts`
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/package.json`
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/vendor/`
-
-这些都是你本机上的本地路径，所以文档里保留为代码引用，不做仓库内超链接。
+这些都是实现引用，所以文档里保留为代码引用，不做仓库内超链接。
 
 因此，这个仓库里所有靠谱的结论，都应该满足一条标准：
 
-**要么能在本地源码里直接看到，要么能从本地源码里稳定推出。**
+**要么能在实现里直接看到，要么能从实现里稳定推出。**
 
 ---
 

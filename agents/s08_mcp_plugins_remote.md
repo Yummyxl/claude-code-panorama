@@ -11,7 +11,7 @@
 - 输出和命令怎么继续扩展
 - 外部系统怎么反过来驱动我
 
-Claude Code 本地运行时里，对应的就是这四组东西：
+Claude Code 运行时里，对应的就是这四组东西：
 
 - MCP
 - skills
@@ -20,7 +20,7 @@ Claude Code 本地运行时里，对应的就是这四组东西：
 
 这一章讲的不是“又多了几个 feature”，而是：
 
-**Claude Code 怎样从一个本地 agent，长成一个可扩展 runtime。**
+**Claude Code 怎样从一个 agent，长成一个可扩展 runtime。**
 
 ---
 
@@ -48,11 +48,11 @@ Claude Code 本地运行时里，对应的就是这四组东西：
 
 ### plugins
 
-把本地 runtime 的命令、内容命令、输出样式继续模块化。
+把运行时的命令、内容命令、输出样式继续模块化。
 
 它解决的是：
 
-- 本地能力如何被继续扩展和定制
+- 当前能力如何被继续扩展和定制
 
 ### remote / channel / bridge
 
@@ -78,7 +78,7 @@ Claude Code 本地运行时里，对应的就是这四组东西：
 
 这当然能工作，但很快就会变成封闭系统。
 
-而 Claude Code 本地代码展示的是另一条路线：
+而 Claude Code 实现展示的是另一条路线：
 
 **把 runtime 做成有正式扩展边界的机器。**
 
@@ -101,7 +101,7 @@ MCP 的意义，不是“能多调一个工具”，而是：
 - 外部工具也是一级对象
 - 外部 server 的存在会影响 prompt 和工具面
 
-这就是为什么本地 schema 里会同时出现：
+这就是为什么工具定义 里会同时出现：
 
 - `ListMcpResourcesInput`
 - `ReadMcpResourceInput`
@@ -118,7 +118,7 @@ MCP 的意义，不是“能多调一个工具”，而是：
 ## 为什么 skills 很关键
 
 很多系统一说“技能”，就喜欢把更多说明永远塞进主 prompt。  
-Claude Code 本地代码显示，它没有这么粗暴。
+Claude Code 实现显示，它没有这么粗暴。
 
 它会：
 
@@ -129,8 +129,8 @@ Claude Code 本地代码显示，它没有这么粗暴。
 
 锚点：
 
-- `cli.js:3345`
-- `cli.js:3347`
+- `实现锚点`
+- `实现锚点`
 
 这很重要，因为它说明 Claude Code 在处理的不是“多塞一点知识”，而是：
 
@@ -144,7 +144,7 @@ Claude Code 本地代码显示，它没有这么粗暴。
 
 ## plugin 为什么不只是“加命令”
 
-从本地代码看，plugin 不只是在加工具，还会影响：
+从实现看，plugin 不只是在加工具，还会影响：
 
 - command 加载
 - inline content command
@@ -152,8 +152,8 @@ Claude Code 本地代码显示，它没有这么粗暴。
 
 锚点：
 
-- `cli.js:4597`
-- `cli.js:7374`
+- `实现锚点`
+- `实现锚点`
 
 这说明 plugin 能进入的不只是动作面，还包括表达面。
 
@@ -191,15 +191,46 @@ Claude Code 本地代码显示，它没有这么粗暴。
 - 可以接外部通知
 - 可以接外部协作入口
 
-锚点：`cli.js:16726`
+锚点：`实现锚点`
 
 这意味着 Claude Code 不只是自己向外接能力，  
 还允许外部系统反过来把它当成一个 runtime endpoint。
 
 这件事的学习价值在于：
 
-Claude Code 不是只把自己设计成一把本地刀，  
-而是把自己设计成一个可嵌入、可编排、可被驱动的本地 agent runtime。
+Claude Code 不是只把自己设计成一把刀，  
+而是把自己设计成一个可嵌入、可编排、可被驱动的 agent runtime。
+
+---
+
+## 最小伪代码
+
+```python
+def extension_runtime(state):
+    tools = load_builtin_tools()
+    tools += load_mcp_tools(state.connected_servers)
+
+    prompt_sections = []
+    prompt_sections += load_matching_skills(state.cwd, state.files)
+    prompt_sections += load_plugin_output_style(state.output_style_name)
+
+    commands = load_plugin_commands()
+    channels = connect_remote_channels_if_enabled(state.remote_mode)
+
+    return RuntimeExtensions(
+        tools=tools,
+        prompt_sections=prompt_sections,
+        commands=commands,
+        channels=channels,
+    )
+```
+
+这段伪代码对应的是本章的核心结构：
+
+- MCP 扩工具面
+- skills 扩工作知识
+- plugins 扩命令和输出样式
+- remote/channel 扩外部驱动入口
 
 ---
 

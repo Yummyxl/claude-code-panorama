@@ -70,7 +70,7 @@ Claude Code 本地设计不是这样。
 
 很多人一听到 worktree，会下意识只想到 git。
 
-但本地代码说明，Claude Code 真正抽象的不是单一命令，而是：
+但实现说明，Claude Code 真正抽象的不是单一命令，而是：
 
 **给 agent 一个独立、稳定、可追踪的工作空间。**
 
@@ -89,7 +89,7 @@ Claude Code 本地设计不是这样。
 
 ## Claude Code 至少支持哪两种隔离路径
 
-从本地代码看，它至少支持两种思路。
+从实现看，它至少支持两种思路。
 
 ### 1. 标准 git worktree
 
@@ -114,9 +114,9 @@ Claude Code 本地设计不是这样。
 
 ---
 
-## 本地代码能确认什么
+## 实现能确认什么
 
-本地代码里可以直接看到完整的 worktree 生命周期逻辑，包括：
+实现里可以直接看到完整的 worktree 生命周期逻辑，包括：
 
 - 创建 worktree
 - 复制 `settings.local.json`
@@ -125,17 +125,17 @@ Claude Code 本地设计不是这样。
 - 删除 worktree
 - 删除 worktree branch
 
-锚点：`cli.js:1280`
+锚点：`实现锚点`
 
-本地 schema 里还能直接看到：
+工具定义 里还能直接看到：
 
 - `EnterWorktreeInput`
 - `ExitWorktreeInput`
 
 锚点：
 
-- `sdk-tools.d.ts:2135`
-- `sdk-tools.d.ts:2141`
+- `工具定义锚点`
+- `工具定义锚点`
 
 这说明两件事：
 

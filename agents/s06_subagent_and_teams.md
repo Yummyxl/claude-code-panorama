@@ -8,7 +8,7 @@
 
 这就是这一章要处理的核心。
 
-从本地代码看，Claude Code 没有把所有“多 agent”都混成一个概念。  
+从实现看，Claude Code 没有把所有“多 agent”都混成一个概念。  
 它至少区分了两层：
 
 - `subagent`
@@ -103,7 +103,7 @@ subagent 的本质是：
 - 换一个 prompt 继续答
 - 在同一份 messages 里开个新话题
 
-从本地 schema 可以直接确认，它是正式运行时对象，因为 `AgentOutput` 里真的会返回：
+从工具定义 可以直接确认，它是正式运行时对象，因为 `AgentOutput` 里真的会返回：
 
 - `agentId`
 - `prompt`
@@ -119,8 +119,8 @@ subagent 的本质是：
 
 锚点：
 
-- `sdk-tools.d.ts:55`
-- `sdk-tools.d.ts:249`
+- `工具定义锚点`
+- `工具定义锚点`
 
 所以最准确的理解是：
 
@@ -203,7 +203,7 @@ team     = organization
 
 ---
 
-## 本地代码能直接确认什么
+## 实现能直接确认什么
 
 ### 1. subagent 是正式工具，而不是提示词技巧
 
@@ -221,7 +221,7 @@ team     = organization
 - `mode`
 - `isolation`
 
-锚点：`sdk-tools.d.ts:249`
+锚点：`工具定义锚点`
 
 这说明 subagent 不是自由发挥，而是带：
 
@@ -242,13 +242,13 @@ team     = organization
 - `--team-name`
 - `--teammate-mode auto|tmux|in-process`
 
-锚点：`cli.js:16726`
+锚点：`实现锚点`
 
 这说明 team 不是抽象概念，而是启动级 runtime 形态。
 
 ### 3. team 有自己的一套提示与消息层
 
-本地 bundle 里可以直接看到：
+运行时实现 里可以直接看到：
 
 - team 提示文本
 - 协议消息构造器
@@ -257,9 +257,9 @@ team     = organization
 
 锚点：
 
-- `cli.js:2790`
-- `cli.js:2800`
-- `cli.js:7979`
+- `实现锚点`
+- `实现锚点`
+- `实现锚点`
 
 这几处证据放在一起，足以排除一种常见误解：
 

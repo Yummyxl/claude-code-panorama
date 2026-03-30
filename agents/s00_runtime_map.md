@@ -14,7 +14,7 @@
 - memory 像一个“顺便有的功能”
 - team 像一个神秘的多助手模式
 
-但从本地代码看，它们其实都是同一套运行时的不同层。
+但从实现看，它们其实都是同一套运行时的不同层。
 
 ---
 
@@ -91,7 +91,7 @@ Claude Code 并不是“用户说一句，模型答一句”。
 
 这些说法都有一点点对，但都太浅。
 
-从本地代码看，Claude Code 至少还有下面这些你不能忽略的层：
+从实现看，Claude Code 至少还有下面这些你不能忽略的层：
 
 - 长上下文管理
 - 任务状态管理
@@ -110,14 +110,14 @@ Claude Code 并不是“用户说一句，模型答一句”。
 
 ### 第一层：API client 层
 
-本地 bundle 直接构造了 Anthropic 相关资源对象，例如：
+运行时实现 直接构造了 Anthropic 相关资源对象，例如：
 
 - `models`
 - `messages`
 - `files`
 - `skills`
 
-锚点：`cli.js:39`
+锚点：`实现锚点`
 
 这意味着 Claude Code 不是“借别人再包一层”，它本身就是正式客户端。
 
@@ -134,7 +134,7 @@ Claude Code 并不是“用户说一句，模型答一句”。
 
 拼成这一轮真正给模型看的 system prompt。
 
-锚点：`cli.js:1480`
+锚点：`实现锚点`
 
 ### 第三层：agent loop 层
 
@@ -148,13 +148,13 @@ Claude Code 并不是“用户说一句，模型答一句”。
 - 执行工具
 - 把 `tool_result` 回流
 
-锚点：`cli.js:36`
+锚点：`实现锚点`
 
 ### 第四层：tool surface 层
 
 这层定义“模型到底能做哪些动作”。
 
-本地 schema 可以直接看到的工具包括：
+工具定义 可以直接看到的工具包括：
 
 - Agent
 - Bash
@@ -166,7 +166,10 @@ Claude Code 并不是“用户说一句，模型答一句”。
 - MCP tools
 - Worktree tools
 
-锚点：`sdk-tools.d.ts:9`
+这里先沿用的是工具定义层的名字。  
+后面进入 prompt/runtime 层时，还会看到 `Read / Edit / Write / TaskCreate / Skill` 这类对模型可见的运行时名字。
+
+锚点：`工具定义锚点`
 
 ### 第五层：context management 层
 
@@ -253,34 +256,34 @@ Claude Code 的复杂度不是来自“主循环难写”。
 
 ---
 
-## 本地代码锚点
+## 实现锚点
 
 这章不展开细节，只给你看总图对应的核心锚点。
 
 ### Anthropic client 资源
 
-- `cli.js:39`
+- `实现锚点`
 
 ### system prompt 组装
 
-- `cli.js:1480`
+- `实现锚点`
 
 ### 主 loop / ToolRunner
 
-- `cli.js:36`
+- `实现锚点`
 
 ### tool schema
 
-- `sdk-tools.d.ts:9`
+- `工具定义锚点`
 
 ### memory / task / team / worktree / skills
 
-- memory：`cli.js:1256`
-- task / todo：`cli.js:1286`
-- team：`cli.js:2790`
-- skills：`cli.js:3345`
-- bash runtime：`cli.js:4588`
-- worktree / CLI options：`cli.js:16726`
+- memory：`实现锚点`
+- task / todo：`实现锚点`
+- team：`实现锚点`
+- skills：`实现锚点`
+- bash runtime：`实现锚点`
+- worktree / CLI options：`实现锚点`
 
 ---
 

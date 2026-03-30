@@ -2,7 +2,7 @@
 
 ## 这一章怎么读
 
-这一章不是“提示词摘要”，而是把本地 `cli.js` 里的 prompt runtime 当成一条真实装配线来拆开。
+这一章不是“提示词摘要”，而是把 prompt runtime 当成一条真实装配线来拆开。
 
 目标有六个：
 
@@ -13,7 +13,7 @@
 5. 解释哪些段是静态常量，哪些段会被运行时状态改写
 6. 给出两份“完整渲染 demo”，让你真正看到模型最终会读到什么
 
-这一章里，“原文”只引用本地源码里确实存在的 prompt 文本；  
+这一章里，“原文”只引用实现里确实存在的 prompt 文本；  
 “demo”会明确写出假设条件，不把 demo 冒充成某一轮真实会话。
 
 ---
@@ -52,7 +52,7 @@
 
 ## 一眼看懂：Claude Code 的 prompt 不是一段字符串，而是一条 section 装配线
 
-本地 `PD(...)` 的核心返回式是：
+`PD(...)` 的核心返回式是：
 
 ```text
 return [
@@ -87,7 +87,7 @@ H = [
 J = await ZXq(H)
 ```
 
-锚点：`cli.js:1495`
+锚点：`实现锚点`
 
 所以 Claude Code 的 prompt 有两个层次：
 
@@ -96,9 +96,31 @@ J = await ZXq(H)
 
 ---
 
+## 最小伪代码
+
+```python
+def assemble_system_prompt(state):
+    sections = [
+        Q4z(state.output_style),
+        d4z(state.tool_names),
+        c4z() if state.keep_coding_instructions else None,
+        l4z(),
+        i4z(state.tool_names, state.additional_context),
+        a4z(),
+        o4z(),
+    ]
+
+    dynamic = compute_dynamic_sections_with_cache(state)
+    return join_non_null(sections + dynamic)
+```
+
+这段伪代码不是在替代原文，而是在把整章最核心的控制流压成一眼能看懂的形式。
+
+---
+
 ## 第一步：`PD(q, K, _, z)` 的四个输入到底是什么
 
-按本地使用方式，它们可以严格解释成：
+按实现用法，它们可以严格解释成：
 
 - `q`
   当前这轮实际可用的工具集合
@@ -143,7 +165,7 @@ IMPORTANT: You must NEVER generate or guess URLs for the user unless you are con
 ```
 
 `hXq` 在本地就是上面第二行那整段安全边界说明。  
-锚点：`cli.js:1495`、`cli.js:1529`
+锚点：`实现锚点`、`实现锚点`
 
 #### 条件
 
@@ -180,7 +202,7 @@ The system will automatically compress prior messages in your conversation as it
 ```
 
 `B4z()` 在本地返回的就是 hooks 这一整句。  
-锚点：`cli.js:1495`、`cli.js:1519`
+锚点：`实现锚点`、`实现锚点`
 
 #### 条件
 
@@ -229,7 +251,7 @@ If the user asks for help or wants to give feedback inform them of the following
 To give feedback, users should report the issue at https://github.com/anthropics/claude-code/issues
 ```
 
-锚点：`cli.js:1495`
+锚点：`实现锚点`
 
 #### 条件
 
@@ -268,7 +290,7 @@ Examples of the kind of risky actions that warrant user confirmation:
 When you encounter an obstacle, do not use destructive actions as a shortcut to simply make it go away. For instance, try to identify root causes and fix underlying issues rather than bypassing safety checks (e.g. --no-verify). If you discover unexpected state like unfamiliar files, branches, or configuration, investigate before deleting or overwriting, as it may represent the user's in-progress work. For example, typically resolve merge conflicts rather than discarding changes; similarly, if a lock file exists, investigate what process holds it rather than deleting it. In short: only take risky actions carefully, and when in doubt, ask before acting. Follow both the spirit and letter of these instructions - measure twice, cut once.
 ```
 
-锚点：`cli.js:1495`
+锚点：`实现锚点`
 
 #### 条件
 
@@ -286,7 +308,7 @@ When you encounter an obstacle, do not use destructive actions as a shortcut to 
 
 #### 本地可确认的真实工具名映射
 
-`i4z` 里的变量，在本地 `cli.js` 里可以直接对应到这些名字：
+`i4z` 里的变量，在本地 `实现主干` 里可以直接对应到这些名字：
 
 - `C4 = "Read"`
 - `vq = "Edit"`
@@ -301,7 +323,7 @@ When you encounter an obstacle, do not use destructive actions as a shortcut to 
 - `$M = "ToolSearch"`
 - `h2 = "AskUserQuestion"`
 
-锚点：`cli.js:3682722`、`cli.js:3686357`、`cli.js:5289076`
+锚点：`实现锚点`、`实现锚点`、`实现锚点`
 
 #### 永远存在的基础规则
 
@@ -358,7 +380,7 @@ For broader codebase exploration and deep research, use the Agent tool with suba
 ```
 
 第二句里的 `general-purpose` 在本地来自 built-in agent 定义。  
-锚点：`cli.js:1495`、`cli.js:1540`
+锚点：`实现锚点`、`实现锚点`
 
 #### 如果 skill 目录存在且工具里有 `Skill`
 
@@ -405,7 +427,7 @@ When referencing GitHub issues or pull requests, use the owner/repo#123 format (
 Do not use a colon before tool calls. Your tool calls may not be shown directly in the output, so text like "Let me read the file:" followed by a read tool call should just be "Let me read the file." with a period.
 ```
 
-锚点：`cli.js:1495`
+锚点：`实现锚点`
 
 #### 条件
 
@@ -432,7 +454,7 @@ Focus text output on:
 If you can say it in one sentence, don't use three. Prefer short, direct sentences over long explanations. This does not apply to code or tool calls.
 ```
 
-锚点：`cli.js:1495`
+锚点：`实现锚点`
 
 #### 条件
 
@@ -477,7 +499,7 @@ __SYSTEM_PROMPT_DYNAMIC_BOUNDARY__
 - auto memory enable -> 走 auto memory 路径
 - 都不启用 -> 返回 `null`
 
-锚点：`cli.js:1256`
+锚点：`实现锚点`
 
 #### 条件
 
@@ -533,7 +555,7 @@ Claude Code is available as a CLI in the terminal, desktop app (Mac/Windows), we
 Fast mode for Claude Code uses the same Claude Opus 4.6 model with faster output. It does NOT switch to a different model. It can be toggled with /fast.
 ```
 
-锚点：`cli.js:1495`
+锚点：`实现锚点`
 
 #### 条件
 
@@ -700,7 +722,7 @@ When working with tool results, write down any important information you might n
 
 ## 第四步：section cache 是怎么工作的
 
-本地代码里：
+实现里：
 
 ```text
 function QF(q, K){ return { name: q, compute: K, cacheBreak: false } }
@@ -715,7 +737,7 @@ async function ZXq(q){
 }
 ```
 
-锚点：`cli.js:1400`
+锚点：`实现锚点`
 
 它意味着：
 
@@ -1019,7 +1041,7 @@ Keep messages tight — the decision, the file:line, the PR number. Second perso
 - `brief` 模式又在最后追加了一层“对用户说话”的专门规则
 
 这里唯一不能写成固定原文的，是 `## docs` 后面的指令正文。  
-原因不是我没展开，而是这部分本来就来自外部 MCP server 的实时状态，不是本地安装包里固定写死的字符串。
+原因不是我没展开，而是这部分本来就来自外部 MCP server 的实时状态，不是当前交付实现里固定写死的字符串。
 
 ### 这份 demo 真正说明了什么
 

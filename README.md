@@ -12,7 +12,7 @@ If you look at Claude Code from the outside, it is easy to collapse it into one 
 
 All three are partially true. None of them is the right mental model.
 
-From the local installed package, the more useful description is:
+From the delivered runtime, the more useful description is:
 
 **Claude Code is a local agent runtime built to keep a model working over time.**
 
@@ -71,21 +71,18 @@ This repository is written around those questions.
 
 This project is strict about evidence.
 
-It analyzes the local installed package only. The main artifact is:
+It analyzes the delivered runtime only. The main materials are:
 
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/cli.js`
+- `implementation core`
+- `tool definitions`
+- `package metadata`
+- `vendor assets`
 
-Supporting evidence comes from the same local package:
-
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts`
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/package.json`
-- `/opt/homebrew/lib/node_modules/@anthropic-ai/claude-code/vendor/`
-
-These are machine-local paths, so they are rendered as code references instead of repository links.
+These are implementation references, so they are rendered as code references instead of repository links.
 
 That means the working standard for every chapter is:
 
-**either a claim is directly visible in local code, or it is a constrained inference from local code.**
+**either a claim is directly visible in the implementation, or it is a constrained inference from the implementation.**
 
 This repository is not built by diffing public repos or copying product marketing language.
 

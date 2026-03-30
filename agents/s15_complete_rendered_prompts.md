@@ -20,8 +20,8 @@
 
 注意两条边界：
 
-1. 这里的渲染都基于本地源码结构来做
-2. 只有本地源码里固定存在的部分，才会展开成固定原文
+1. 这里的渲染都基于实现结构来做
+2. 只有实现里固定存在的部分，才会展开成固定原文
 3. 来自运行时动态外部输入的部分，例如 memory 文件内容、MCP server 实时 instructions，只会用结构占位说明，不会捏造正文
 
 ---
@@ -60,7 +60,7 @@ Claude Code 没有一个永恒不变的完整 prompt 文件。
 
 这是包里最短、最容易被忽视的一条分支。
 
-源码里 `PD(...)` 一开头就有：
+实现里 `PD(...)` 一开头就有：
 
 ```text
 if (CLAUDE_CODE_SIMPLE) return [
@@ -68,7 +68,7 @@ if (CLAUDE_CODE_SIMPLE) return [
 ]
 ```
 
-锚点：`cli.js:1495`
+锚点：`实现锚点`
 
 ### 完整渲染结果
 
@@ -94,6 +94,25 @@ Date: 2026-03-29
 - 它真正的复杂性在 runtime 机制
 
 因为包里明确允许把大部分复杂 prompt 砍掉，只保留最小身份说明。
+
+---
+
+## 最小伪代码
+
+```python
+def render_prompt_for_scenario(state):
+    assembled = assemble_system_prompt(state)
+    return expand_fixed_sections_and_keep_runtime_placeholders(
+        assembled,
+        state=state,
+    )
+```
+
+这段伪代码对应的是本章的方法：
+
+- 先按给定状态装配 prompt
+- 再把固定原文展开
+- 动态外部内容只保留结构占位
 
 ---
 
@@ -371,7 +390,7 @@ For longer work: ack → work → result. Between those, send a checkpoint when 
 Keep messages tight — the decision, the file:line, the PR number. Second person always ("your config"), never third.
 ```
 
-锚点：`cli.js:297`
+锚点：`实现锚点`
 
 ### 这份 prompt 的学习价值
 
@@ -389,7 +408,7 @@ Keep messages tight — the decision, the file:line, the PR number. Second perso
 
 **为什么文档里老是把 MCP instructions 写成结构模板，而不直接贴“完整 prompt”？**
 
-因为本地源码里 `U4z(z)` 的正文结构是固定的，但里面真正的 `server.instructions` 来自：
+因为实现里 `U4z(z)` 的正文结构是固定的，但里面真正的 `server.instructions` 来自：
 
 - 当前连接的 MCP server
 - 当前这一轮的实时连接状态

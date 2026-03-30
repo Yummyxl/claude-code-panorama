@@ -12,7 +12,7 @@
 - 这件大事拆成了哪几步
 - 某个动作如果很慢，我怎么不停下来干等
 
-Claude Code 本地运行时里，对应的是三层不同能力：
+Claude Code 运行时里，对应的是三层不同能力：
 
 - `task`
 - `todo`
@@ -121,9 +121,9 @@ Fix the failing login flow, run the tests, and summarize the root cause.
 
 ---
 
-## 本地代码能确认什么
+## 实现能确认什么
 
-从本地 bundle 里可以直接看到这些名字：
+从运行时实现 里可以直接看到这些名字：
 
 - `TaskCreate`
 - `TaskOutput`
@@ -134,14 +134,14 @@ Fix the failing login flow, run the tests, and summarize the root cause.
 
 锚点：
 
-- `cli.js:297`
-- `cli.js:1286`
+- `实现锚点`
+- `实现锚点`
 
-从本地 schema 又能看到对应输入定义：
+从工具定义 又能看到对应输入定义：
 
-- `sdk-tools.d.ts:319`
-- `sdk-tools.d.ts:463`
-- `sdk-tools.d.ts:514`
+- `工具定义锚点`
+- `工具定义锚点`
+- `工具定义锚点`
 
 这说明：
 
@@ -149,20 +149,27 @@ Fix the failing login flow, run the tests, and summarize the root cause.
 - 它们是正式 runtime object
 - 它们已经进入 Claude Code 的工具面
 
+这里也要注意命名口径：
+
+- 这一章这段先说的是 runtime 名字，例如 `TaskCreate`
+- 工具定义层里未必用同一个名字暴露 schema
+
+所以这段是在讲“运行时里发生了什么”，不是在给 schema 做逐字段列表。
+
 ---
 
 ## Claude Code 为什么连 Bash 都要“任务化”
 
 这一点非常值得学。
 
-本地 Bash 运行时里能看到这些字段：
+运行时里的 Bash 路径能看到这些字段：
 
 - `backgroundTaskId`
 - `assistantAutoBackgrounded`
 - `persistedOutputPath`
 - `persistedOutputSize`
 
-锚点：`cli.js:4588`
+锚点：`实现锚点`
 
 这说明 Claude Code 对 shell 的理解不是：
 

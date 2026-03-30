@@ -27,11 +27,11 @@
 
 主要证据来自：
 
-- `cli.js:16476`
-- `cli.js:7974`
-- `cli.js:7806`
-- `cli.js:1495`
-- `cli.js:297`
+- `实现锚点`
+- `实现锚点`
+- `实现锚点`
+- `实现锚点`
+- `实现锚点`
 
 ---
 
@@ -88,7 +88,7 @@ RtK(...)
 
 ## 第一层：入口为什么是 `RtK(...)`
 
-本地代码里，`RtK(...)` 很简单：
+实现里，`RtK(...)` 很简单：
 
 ```text
 async function* RtK(...) {
@@ -101,7 +101,7 @@ async function* RtK(...) {
 }
 ```
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 ### 它在架构里的作用
 
@@ -176,7 +176,7 @@ Fix the failing login test and tell me what was broken.
 - `includePartialMessages`
 - `agents`
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 这一步很重要，因为它说明：
 
@@ -219,7 +219,7 @@ Fix the failing login test and tell me what was broken.
 ])
 ```
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 这里三样东西分别对应：
 
@@ -253,7 +253,7 @@ e = O5([
 ])
 ```
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 这几行非常关键：
 
@@ -279,7 +279,7 @@ Claude Code 不是“有一个固定 system prompt 字符串”。
 let { messages:r, shouldQuery:_6, allowedTools:D6, model:J6, resultText:E6 } = await tU8(...)
 ```
 
-锚点：`cli.js:7974`、`cli.js:16476`
+锚点：`实现锚点`、`实现锚点`
 
 `tU8(...)` 是一个非常重要但经常被忽略的层。
 
@@ -308,7 +308,7 @@ if (!shouldQuery) {
 }
 ```
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 ### 这意味着什么
 
@@ -355,7 +355,7 @@ yield uF8({
 })
 ```
 
-锚点：`cli.js:7806`、`cli.js:16476`
+锚点：`实现锚点`、`实现锚点`
 
 `uF8(...)` 产出的是一个 `system/init` 型事件，里面会带：
 
@@ -404,7 +404,7 @@ for await (let L6 of _b({
 }))
 ```
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 虽然我们这里没有把 `_b(...)` 的完整函数体整段再摘出来，但从调用点已经能严格确认：
 
@@ -436,7 +436,7 @@ for await (let L6 of _b({
 - `tool_use_summary`
 - `tombstone`
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 这非常关键，因为它说明：
 
@@ -555,7 +555,7 @@ Claude Code 不只保存原始 tool use / tool result，还会产出摘要事件
 - 同步裁切当前工作副本 `$6`
 - 对外 `yield` 一个新的 compact boundary 事件
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 这意味着：
 
@@ -590,7 +590,7 @@ Claude Code 不只保存原始 tool use / tool result，还会产出摘要事件
 - `permission_denials`
 - 可选 `structured_output`
 
-锚点：`cli.js:16476`
+锚点：`实现锚点`
 
 ### 这里最重要的设计点
 

@@ -11,7 +11,7 @@
 
 很多人就会自然把它们混成一团，觉得都是“记忆机制”。
 
-Claude Code 这套本地代码非常清楚地告诉你：
+Claude Code 这套实现非常清楚地告诉你：
 
 **不是。**
 
@@ -54,7 +54,7 @@ compaction 解决的是：
 
 所以它是“会话维护机制”。
 
-从本地 bundle 可见，Claude Code 非常强调：
+从运行时实现 可见，Claude Code 非常强调：
 
 - 不要只保留文本
 - 必须保留完整 `response.content`
@@ -62,8 +62,8 @@ compaction 解决的是：
 
 锚点：
 
-- `cli.js:9689`
-- `cli.js:12624`
+- `实现锚点`
+- `实现锚点`
 
 ---
 
@@ -82,7 +82,7 @@ memory 解决的是：
 
 所以它是“长期背景注入机制”。
 
-从本地 memory 区域可以直接看到，它至少区分这些来源：
+从记忆实现路径可以直接看到，它至少区分这些来源：
 
 - `Managed`
 - `User`
@@ -91,7 +91,7 @@ memory 解决的是：
 - `AutoMem`
 - `TeamMem`
 
-锚点：`cli.js:1256`
+锚点：`实现锚点`
 
 ---
 
@@ -142,11 +142,11 @@ compaction 接在消息历史这一侧。
 
 memory 则接在 system prompt 这一侧。
 
-从本地 `PD(...)` 可以直接看到：
+从`PD(...)` 可以直接看到：
 
 - `memory` 是一个正式 section
 
-锚点：`cli.js:1480`
+锚点：`实现锚点`
 
 这意味着 memory 不是“从历史里自动推理出来的东西”，而是运行时在每轮 request 前主动注入的背景材料。
 
@@ -192,20 +192,20 @@ def next_turn(messages, state):
 
 ---
 
-## 本地代码锚点
+## 实现锚点
 
 ### memory 是 system prompt section
 
-- `cli.js:1480`
+- `实现锚点`
 
 ### memory 来源枚举
 
-- `cli.js:1256`
+- `实现锚点`
 
 ### compaction block 必须保留完整内容
 
-- `cli.js:9689`
-- `cli.js:12624`
+- `实现锚点`
+- `实现锚点`
 
 ### compaction 也是正式 hook 生命周期
 
@@ -216,8 +216,8 @@ def next_turn(messages, state):
 
 锚点：
 
-- `cli.js:8162`
-- `cli.js:14796`
+- `实现锚点`
+- `实现锚点`
 
 这说明 compaction 不是内部小技巧，而是正式生命周期事件。
 
